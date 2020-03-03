@@ -17,16 +17,15 @@ module.exports = {
         extensions: ['.js', '.jsx', '.json', '.ts', '.tsx']
     },
     module: {
-        rules: [{
-                test: /\.(ts|tsx)$/,
-                loader: 'ts-loader'
-            },
+        rules: [
+            { test: /\.scss$/, use: ["style-loader", "css-loader", "sass-loader"] },
+            { test: /\.tsx?$/, loader: "babel-loader" },
+            { test: /\.tsx?$/, loader: "ts-loader" },
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src'
-                kj, 'index.html') }),
+        new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src', 'index.html') }),
         new webpack.HotModuleReplacementPlugin()
     ]
 }

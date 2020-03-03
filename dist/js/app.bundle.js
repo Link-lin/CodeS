@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "0ccce1675815bb1b5d13";
+/******/ 	var hotCurrentHash = "b9de1817688bacec6d6b";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -30740,12 +30740,22 @@ module.exports = function(module) {
 
 "use strict";
 
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-var Hello_1 = __webpack_require__(/*! ./components/Hello */ "./src/components/Hello.tsx");
-ReactDOM.render(React.createElement(Hello_1.Hello, { compiler: "Typescript", framework: "React", bundler: "Webpack" }), document.getElementById("root"));
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+var Hello_1 = __webpack_require__(/*! ./components/Hello */ "./src/components/Hello.tsx");
+
+ReactDOM.render(React.createElement(Hello_1.Hello, {
+  compiler: "Typescript",
+  framework: "React",
+  bundler: "Webpack"
+}), document.getElementById("root"));
 
 /***/ }),
 
@@ -30758,40 +30768,54 @@ ReactDOM.render(React.createElement(Hello_1.Hello, { compiler: "Typescript", fra
 
 "use strict";
 
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var Hello = (function (_super) {
-    __extends(Hello, _super);
-    function Hello() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Hello.prototype.render = function () {
-        return (React.createElement("h1", null,
-            "This is a ",
-            this.props.framework,
-            " application using ",
-            this.props.compiler,
-            " ",
-            "with ",
-            this.props.bundler));
-    };
-    return Hello;
-}(React.Component));
-exports.Hello = Hello;
 
+var __extends = this && this.__extends || function () {
+  var _extendStatics = function extendStatics(d, b) {
+    _extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) {
+        if (b.hasOwnProperty(p)) d[p] = b[p];
+      }
+    };
+
+    return _extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    _extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var Hello = function (_super) {
+  __extends(Hello, _super);
+
+  function Hello() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  Hello.prototype.render = function () {
+    return React.createElement("h1", null, "This is a ", this.props.framework, " application using ", this.props.compiler, " ", "with ", this.props.bundler);
+  };
+
+  return Hello;
+}(React.Component);
+
+exports.Hello = Hello;
 
 /***/ }),
 
