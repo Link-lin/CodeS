@@ -1,20 +1,20 @@
-const path = require('path'),
-    webpack = require('webpack'),
-    HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path"),
+    webpack = require("webpack"),
+    HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     mode: "development",
     entry: {
-        app: ['./src/App.tsx', 'webpack-hot-middleware/client'],
-        vendor: ['react', 'react-dom']
+        app: ["./src/App.tsx", "webpack-hot-middleware/client"],
+        vendor: ["react", "react-dom"]
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'js/[name].bundle.js'
+        path: path.resolve(__dirname, "dist"),
+        filename: "js/[name].bundle.js"
     },
-    devtool: 'source-map',
+    devtool: "source-map",
     resolve: {
-        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx']
+        extensions: [".js", ".jsx", ".json", ".ts", ".tsx"]
     },
     module: {
         rules: [
@@ -25,7 +25,10 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src', 'index.html') }),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, "src", "index.html"),
+            favicon: path.resolve(__dirname, "static/image", "favicon-16x16.png")
+        }),
         new webpack.HotModuleReplacementPlugin()
     ]
-}
+};
