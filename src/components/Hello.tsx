@@ -1,5 +1,5 @@
 import * as React from "react";
-import Button from '@material-ui/core/Button';
+import {Button} from "@material-ui/core"
 
 
 interface IProps {
@@ -11,13 +11,14 @@ interface IProps {
 class Hello extends React.Component<IProps, {}> {
     render() {
         return (
-            <div>
-                <Button> hello</Button>
+            <>
+                <Button variant="contained" color="primary">
+                    Primary</Button>
                 <h1>
                     Thi is a {this.props.framework} application using {this.props.compiler}{" "}
                     with {this.props.bundler}
                 </h1>
-            </div>
+            </>
         );
     }
 }
