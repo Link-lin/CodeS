@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "df5416cf292eb275f94e";
+/******/ 	var hotCurrentHash = "facf185a9866c7dfedf2";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -80571,9 +80571,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
-var core_1 = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+var modules_1 = __webpack_require__(/*! ./modules */ "./src/modules/index.ts");
 
 var App = function (_super) {
   __extends(App, _super);
@@ -80583,16 +80583,13 @@ var App = function (_super) {
   }
 
   App.prototype.render = function () {
-    return react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement(core_1.Button, {
-      variant: "contained",
-      color: "primary"
-    }, "Primary"), react_1.default.createElement("h1", null, "Thi is a ", this.props.framework, " application using ", this.props.compiler, " ", "with ", this.props.bundler));
+    return React.createElement("div", null, React.createElement(modules_1.Header, null), React.createElement(modules_1.Sidebar, null));
   };
 
   return App;
-}(react_1.default.Component);
+}(React.Component);
 
-exports.App = App;
+exports.default = App;
 
 /***/ }),
 
@@ -80618,11 +80615,167 @@ __webpack_require__(/*! ./App.scss */ "./src/App.scss");
 
 var App_1 = __webpack_require__(/*! ./App */ "./src/App.tsx");
 
-ReactDOM.render(React.createElement(App_1.App, {
-  compiler: "react",
-  framework: "react",
-  bundler: "hello"
+ReactDOM.render(React.createElement(App_1.default, {
+  compiler: "Typescript",
+  framework: "React",
+  bundler: "Webpack"
 }), document.getElementById("root"));
+
+/***/ }),
+
+/***/ "./src/modules/Header/Header.tsx":
+/*!***************************************!*\
+  !*** ./src/modules/Header/Header.tsx ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __extends = this && this.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var core_1 = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+
+var Header = function (_super) {
+  __extends(Header, _super);
+
+  function Header() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  Header.prototype.render = function () {
+    return React.createElement(core_1.Toolbar, null, React.createElement(core_1.Button, {
+      size: "small",
+      color: "primary",
+      variant: "contained"
+    }, "Subscribe"), React.createElement(core_1.Toolbar, null, React.createElement(core_1.IconButton, {
+      edge: "start",
+      color: "inherit",
+      "aria-label": "menu"
+    }), React.createElement(core_1.Typography, {
+      variant: "h6"
+    }, "News"), React.createElement(core_1.Button, {
+      color: "inherit"
+    }, "Login")));
+  };
+
+  return Header;
+}(React.Component);
+
+exports.default = Header;
+
+/***/ }),
+
+/***/ "./src/modules/Sidebar/Sidebar.tsx":
+/*!*****************************************!*\
+  !*** ./src/modules/Sidebar/Sidebar.tsx ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __extends = this && this.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var Sidebar = function (_super) {
+  __extends(Sidebar, _super);
+
+  function Sidebar() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  Sidebar.prototype.render = function () {
+    return React.createElement("nav", null, React.createElement("div", null, React.createElement("div", null, React.createElement("a", {
+      href: "/"
+    }, " The Logo ")), React.createElement("div", null)));
+  };
+
+  return Sidebar;
+}(React.Component);
+
+exports.default = Sidebar;
+
+/***/ }),
+
+/***/ "./src/modules/index.ts":
+/*!******************************!*\
+  !*** ./src/modules/index.ts ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var Header_1 = __webpack_require__(/*! ./Header/Header */ "./src/modules/Header/Header.tsx");
+
+exports.Header = Header_1.default;
+
+var Sidebar_1 = __webpack_require__(/*! ./Sidebar/Sidebar */ "./src/modules/Sidebar/Sidebar.tsx");
+
+exports.Sidebar = Sidebar_1.default;
 
 /***/ }),
 

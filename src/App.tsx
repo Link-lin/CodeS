@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Header, Sidebar } from './components'
+import { Header, Sidebar } from './modules'
 import { Button } from "@material-ui/core"
 interface IProps {
     compiler: string;
@@ -9,6 +9,7 @@ interface IProps {
 
 class App extends React.Component<IProps, {}> {
     render() {
+        /*
         return (
             <>
                 <Button variant="contained" color="primary">
@@ -19,6 +20,13 @@ class App extends React.Component<IProps, {}> {
                 </h1>
             </>
         );
+        */
+        return (
+            <div>
+                <Header />
+                <Sidebar />
+            </div>
+        )
     }
 }
 
