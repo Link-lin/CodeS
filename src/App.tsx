@@ -24,7 +24,6 @@ class App extends React.Component<IProps, {}> {
         return (
             <div>
                 <Header />
-                <Sidebar />
             </div>
         )
     }
