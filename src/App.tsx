@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Header, Sidebar } from './modules'
+import { Header, Sidebar, HeaderCopy } from './modules'
 import { Button } from "@material-ui/core"
 interface IProps {
     compiler: string;
@@ -24,6 +24,7 @@ class App extends React.Component<IProps, {}> {
         return (
             <div>
                 <Header />
+                <HeaderCopy />
             </div>
         )
     }

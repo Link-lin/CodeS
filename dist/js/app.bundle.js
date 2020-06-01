@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "44cc5747dc8aaeab63f8";
+/******/ 	var hotCurrentHash = "664dc164a263613b4fbb";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -14517,7 +14517,25 @@ function toVal(mix) {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "body {\n  margin: 0px; }\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/modules/Header/Header.scss":
+/*!*********************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/modules/Header/Header.scss ***!
+  \*********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".makeStyle-title-3 {\n  background-color: red; }\n\n.MuiTypography-root {\n  margin-left: 15px !important; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -51493,7 +51511,7 @@ var App = function (_super) {
   }
 
   App.prototype.render = function () {
-    return React.createElement("div", null, React.createElement(modules_1.Header, null));
+    return React.createElement("div", null, React.createElement(modules_1.Header, null), React.createElement(modules_1.HeaderCopy, null));
   };
 
   return App;
@@ -51530,6 +51548,59 @@ ReactDOM.render(React.createElement(App_1.default, {
   framework: "React",
   bundler: "Webpack"
 }), document.getElementById("root"));
+
+/***/ }),
+
+/***/ "./src/modules/Header/Header.scss":
+/*!****************************************!*\
+  !*** ./src/modules/Header/Header.scss ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./Header.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/modules/Header/Header.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+if (true) {
+  if (!content.locals) {
+    module.hot.accept(
+      /*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./Header.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/modules/Header/Header.scss",
+      function () {
+        var newContent = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./Header.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/modules/Header/Header.scss");
+
+              newContent = newContent.__esModule ? newContent.default : newContent;
+
+              if (typeof newContent === 'string') {
+                newContent = [[module.i, newContent, '']];
+              }
+
+              update(newContent);
+      }
+    )
+  }
+
+  module.hot.dispose(function() { 
+    update();
+  });
+}
+
+module.exports = exported;
 
 /***/ }),
 
@@ -51730,7 +51801,8 @@ function PrimarySearchAppBar() {
   return React.createElement("div", {
     className: classes.grow
   }, React.createElement(AppBar_1.default, {
-    position: "static"
+    position: "static",
+    color: "default"
   }, React.createElement(Toolbar_1.default, null, React.createElement(IconButton_1.default, {
     edge: "start",
     className: classes.menuButton,
@@ -51740,7 +51812,7 @@ function PrimarySearchAppBar() {
     className: classes.title,
     variant: "h6",
     noWrap: true
-  }, "Material-UI"), React.createElement("div", {
+  }, "CodeS"), React.createElement("div", {
     className: classes.search
   }, React.createElement("div", {
     className: classes.searchIcon
@@ -51788,6 +51860,89 @@ function PrimarySearchAppBar() {
 }
 
 exports.default = PrimarySearchAppBar;
+
+/***/ }),
+
+/***/ "./src/modules/Header/Header_Copy.tsx":
+/*!********************************************!*\
+  !*** ./src/modules/Header/Header_Copy.tsx ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __extends = this && this.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var AppBar_1 = __webpack_require__(/*! @material-ui/core/AppBar */ "./node_modules/@material-ui/core/esm/AppBar/index.js");
+
+var Toolbar_1 = __webpack_require__(/*! @material-ui/core/Toolbar */ "./node_modules/@material-ui/core/esm/Toolbar/index.js");
+
+var IconButton_1 = __webpack_require__(/*! @material-ui/core/IconButton */ "./node_modules/@material-ui/core/esm/IconButton/index.js");
+
+var Typography_1 = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
+
+var Menu_1 = __webpack_require__(/*! @material-ui/icons/Menu */ "./node_modules/@material-ui/icons/Menu.js");
+
+__webpack_require__(/*! ./Header.scss */ "./src/modules/Header/Header.scss");
+
+var HeaderCopy = function (_super) {
+  __extends(HeaderCopy, _super);
+
+  function HeaderCopy(props) {
+    return _super.call(this, props) || this;
+  }
+
+  HeaderCopy.prototype.render = function () {
+    return React.createElement("div", {
+      className: ""
+    }, React.createElement(AppBar_1.default, {
+      position: "static",
+      color: "default"
+    }, React.createElement(Toolbar_1.default, null, React.createElement(IconButton_1.default, {
+      edge: "start",
+      color: "inherit",
+      "aria-label": "open drawer"
+    }, React.createElement(Menu_1.default, null)), React.createElement(Typography_1.default, {
+      variant: "h6",
+      noWrap: true,
+      className: "typo"
+    }, "CodeS"))));
+  };
+
+  return HeaderCopy;
+}(React.Component);
+
+exports.default = HeaderCopy;
 
 /***/ }),
 
@@ -51872,6 +52027,10 @@ exports.Header = Header_1.default;
 var Sidebar_1 = __webpack_require__(/*! ./Sidebar/Sidebar */ "./src/modules/Sidebar/Sidebar.tsx");
 
 exports.Sidebar = Sidebar_1.default;
+
+var Header_Copy_1 = __webpack_require__(/*! ./Header/Header_Copy */ "./src/modules/Header/Header_Copy.tsx");
+
+exports.HeaderCopy = Header_Copy_1.default;
 
 /***/ }),
 
