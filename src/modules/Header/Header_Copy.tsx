@@ -95,8 +95,7 @@ class HeaderCopy extends React.Component<IHeaderProps, any> {
 
     render() {
         return (
-            const { classes } = this.props;
-            <div className=>
+            <div className="">
                 <AppBar position="static" color="default">
                     <Toolbar>
                         <IconButton
