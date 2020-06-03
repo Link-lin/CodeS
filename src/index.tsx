@@ -4,6 +4,6 @@ import './App.scss'
 import App from "./App";
 
 ReactDOM.render(
-    <App compiler="Typescript" framework="React" bundler="Webpack" />,
+    <App />,
     document.getElementById("root")
 );

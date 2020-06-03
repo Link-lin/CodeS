@@ -1,13 +1,8 @@
 import * as React from 'react'
 import { Header, Sidebar, HeaderCopy } from './modules'
 import { Button } from "@material-ui/core"
-interface IProps {
-    compiler: string;
-    framework: string;
-    bundler: string;
-}
 
-class App extends React.Component<IProps, {}> {
+class App extends React.Component {
     render() {
         /*
         return (

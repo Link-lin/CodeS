@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "664dc164a263613b4fbb";
+/******/ 	var hotCurrentHash = "d4beddc234729ecfdae7";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -14517,7 +14517,7 @@ function toVal(mix) {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "body {\n  margin: 0px; }\n", ""]);
+exports.push([module.i, "body {\n  margin: 0px;\n  padding: 0; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -51543,11 +51543,7 @@ __webpack_require__(/*! ./App.scss */ "./src/App.scss");
 
 var App_1 = __webpack_require__(/*! ./App */ "./src/App.tsx");
 
-ReactDOM.render(React.createElement(App_1.default, {
-  compiler: "Typescript",
-  framework: "React",
-  bundler: "Webpack"
-}), document.getElementById("root"));
+ReactDOM.render(React.createElement(App_1.default, null), document.getElementById("root"));
 
 /***/ }),
 
@@ -51903,6 +51899,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
+var styles_1 = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+
 var AppBar_1 = __webpack_require__(/*! @material-ui/core/AppBar */ "./node_modules/@material-ui/core/esm/AppBar/index.js");
 
 var Toolbar_1 = __webpack_require__(/*! @material-ui/core/Toolbar */ "./node_modules/@material-ui/core/esm/Toolbar/index.js");
@@ -51915,11 +51913,73 @@ var Menu_1 = __webpack_require__(/*! @material-ui/icons/Menu */ "./node_modules/
 
 __webpack_require__(/*! ./Header.scss */ "./src/modules/Header/Header.scss");
 
+var useStyles = function (theme) {
+  var _a, _b, _c, _d, _e;
+
+  return {
+    grow: {
+      flexGrow: 1
+    },
+    menuButton: {
+      marginRight: theme.spacing(2)
+    },
+    title: (_a = {
+      display: 'none'
+    }, _a[theme.breakpoints.up('sm')] = {
+      display: 'block'
+    }, _a),
+    search: (_b = {
+      position: 'relative',
+      borderRadius: theme.shape.borderRadius,
+      backgroundColor: styles_1.fade(theme.palette.common.white, 0.15),
+      '&:hover': {
+        backgroundColor: styles_1.fade(theme.palette.common.white, 0.25)
+      },
+      marginRight: theme.spacing(2),
+      marginLeft: 0,
+      width: '100%'
+    }, _b[theme.breakpoints.up('sm')] = {
+      marginLeft: theme.spacing(3),
+      width: 'auto'
+    }, _b),
+    searchIcon: {
+      padding: theme.spacing(0, 2),
+      height: '100%',
+      position: 'absolute',
+      pointerEvents: 'none',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    inputRoot: {
+      color: 'inherit'
+    },
+    inputInput: (_c = {
+      padding: theme.spacing(1, 1, 1, 0),
+      paddingLeft: "calc(1em + " + theme.spacing(4) + "px)",
+      transition: theme.transitions.create('width'),
+      width: '100%'
+    }, _c[theme.breakpoints.up('md')] = {
+      width: '20ch'
+    }, _c),
+    sectionDesktop: (_d = {
+      display: 'none'
+    }, _d[theme.breakpoints.up('md')] = {
+      display: 'flex'
+    }, _d),
+    sectionMobile: (_e = {
+      display: 'flex'
+    }, _e[theme.breakpoints.up('md')] = {
+      display: 'none'
+    }, _e)
+  };
+};
+
 var HeaderCopy = function (_super) {
   __extends(HeaderCopy, _super);
 
-  function HeaderCopy(props) {
-    return _super.call(this, props) || this;
+  function HeaderCopy() {
+    return _super !== null && _super.apply(this, arguments) || this;
   }
 
   HeaderCopy.prototype.render = function () {

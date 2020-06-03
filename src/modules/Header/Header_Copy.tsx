@@ -16,11 +16,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import "./Header.scss"
 
-interface IHeaderProps {
-    classes: any;
-}
-
-const useStyles =(theme: Theme) =>
+const useStyles = (theme: Theme) =>
   ({
     grow: {
       flexGrow: 1,
@@ -83,37 +79,31 @@ const useStyles =(theme: Theme) =>
         display: 'none',
       },
     },
-  }),
-);
+  })
 
-class HeaderCopy extends React.Component<IHeaderProps, any> {
+class HeaderCopy extends React.Component {
 
-    constructor(props: IHeaderProps) {
-        super(props);
-
-    }
-
-    render() {
-        return (
-            <div className="">
-                <AppBar position="static" color="default">
-                    <Toolbar>
-                        <IconButton
-                            edge="start"
-                            color="inherit"
-                            aria-label="open drawer"
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography variant="h6" noWrap className="typo">
-                            CodeS
+  render() {
+    return (
+      <div className="">
+        <AppBar position="static" color="default">
+          <Toolbar>
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" noWrap className="typo">
+              CodeS
                         </Typography>
-                    </Toolbar>
+          </Toolbar>
 
-                </AppBar>
-            </div>
-        )
-    }
+        </AppBar>
+      </div>
+    )
+  }
 
 }
 
