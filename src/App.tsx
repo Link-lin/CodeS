@@ -1,6 +1,9 @@
 import * as React from 'react'
 import { Header, Sidebar, HeaderCopy } from './modules'
 import { Button } from "@material-ui/core"
+import { store } from "./store/Store";
+import { Provider } from "react-redux"
+import { BrowserRouter as Router } from "react-router-dom";
 
 class App extends React.Component {
     render() {
@@ -17,10 +20,12 @@ class App extends React.Component {
         );
         */
         return (
-            <div>
-                <Header />
-                <HeaderCopy />
-            </div>
+            <Provider store={store}>
+                <Router>
+                    <Header />
+                    <HeaderCopy />
+                </Router>
+            </Provider>
         )
     }
 }
